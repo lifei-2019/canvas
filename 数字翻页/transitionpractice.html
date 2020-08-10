@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>transition</title>
+  <style>
+    #test {
+      width: 200px;
+      height: 200px;
+      background-color: #69c;
+      margin: 0 auto;
+      transition: background-color 3s;
+      /* 等价于两条语句
+      transition-property:color;
+      transition-duration:1s
+       */
+    }
+    #test:hover{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+</body>
+</html>
