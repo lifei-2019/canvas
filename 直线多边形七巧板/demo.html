@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas示例</title>
+</head>
+<body>
+  <canvas id="canvas" width="1024" height="700" style="border:1px solid #aaa;display:block;margin: 0 auto"></canvas>
+  <script>
+    window.onload = () => {
+      const canvas = document.getElementById("canvas")
+      if(canvas.getContext("2d")){
+        const context = canvas.getContext("2d")
+        // 使用context绘制(基于状态)
+        
+        context.beginPath()
+        // 状态设置
+        context.moveTo(100,100)
+        context.lineTo(600,600)
+        context.lineTo(100,600)
+        context.lineTo(100,100)
+
+        // 着色
+        context.fillStyle = "blue"
+        context.fill()
+
+        // 绘制
+        context.lineWidth = 5
+        context.strokeStyle = "red"
+        context.stroke()
+
+        // 绘制第二条
+        context.beginPath()
+        context.moveTo(200,100)
+        context.lineTo(700,600)
+        context.closePath()
+        context.strokeStyle = "green"
+        context.stroke()
+      }
+      else{
+        alert("当前浏览器不支持Canvas，请更换浏览器后再尝试")
+      }
+    }
+    
+  </script>
+</body>
+</html>
