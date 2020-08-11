@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas示例</title>
+</head>
+<body>
+  <canvas id="canvas" width="1024" height="700" style="border:1px solid #aaa;display:block;margin: 0 auto"></canvas>
+  <script>
+    window.onload = () => {
+      const canvas = document.getElementById("canvas")
+      canvas.width=1024
+      canvas.height=700
+
+    const context = canvas.getContext("2d")
+    context.lineWith = 5
+    context.strokeStyle = "blue"
+    context.fillStyle = "yellow"
+    for(let i=0; i<10; i++){
+      context.beginPath()
+      context.arc(50+i*100,60,40,0,2*Math.PI*(i+1)/10)
+      context.closePath()
+      context.stroke()
+    }
+    for(let i=0; i<10; i++){
+      context.beginPath()
+      context.arc(50+i*100,180,40,0,2*Math.PI*(i+1)/10)
+      // context.closePath() 这里不结束路径则不会闭合
+      context.stroke()
+    }
+    for(let i=0; i<10; i++){
+      context.beginPath()
+      context.arc(50+i*100, 300, 40, 0, 2*Math.PI*(i+1)/10, true)
+      context.closePath()
+      context.stroke()
+    }
+    for(let i=0; i<10; i++){
+      context.beginPath()
+      context.arc(50+i*100, 420, 40, 0, 2*Math.PI*(i+1)/10, true)
+      // context.closePath() 这里不结束路径则不会闭合
+      context.stroke()
+    }
+    for(let i=0; i<10; i++){
+      context.beginPath()
+      context.arc(50+i*100, 540, 40, 0, 2*Math.PI*(i+1)/10, true)
+      context.closePath()
+      context.fill()
+    }
+    }
+     
+  </script>
+</body>
+</html>
